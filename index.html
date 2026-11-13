@@ -1,233 +1,80 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rumänisch für Marie 🇷🇴</title>
-    <style>
-        body {
-            font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            color: #333;
-        }
-        .header {
-            background: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 20px;
-        }
-        .stars {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff9f1c;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
-        h1 { color: #ff4d6d; margin-top: 0; font-size: 28px; }
-        .btn {
-            background: #4cc9f0;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            margin: 10px 0;
-            width: 100%;
-            box-shadow: 0 5px 0 #3a86ff;
-            transition: transform 0.1s;
-        }
-        .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #3a86ff; }
-        .btn-green { background: #06d6a0; box-shadow: 0 5px 0 #049a73; }
-        .btn-purple { background: #9b5de5; box-shadow: 0 5px 0 #6a359c; }
-        .emoji { font-size: 80px; margin: 15px 0; }
-        .word-ro { font-size: 36px; font-weight: bold; color: #2b2d42; margin: 10px 0; }
-        .word-de { font-size: 20px; color: #8d99ae; margin-bottom: 20px; }
-        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        .quiz-option {
-            background: #f8f9fa;
-            border: 3px solid #dee2e6;
-            border-radius: 20px;
-            padding: 15px;
-            font-size: 40px;
-            cursor: pointer;
-        }
-        .quiz-option:hover { border-color: #4cc9f0; background: #e0fbfc; }
-        .feedback { font-size: 22px; font-weight: bold; margin-top: 15px; min-height: 30px; }
-        .hidden { display: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumänisch für Marie</title>
+<style>
+body{font-family:'Comic Sans MS','Segoe UI',sans-serif;background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);margin:0;padding:20px;display:flex;flex-direction:column;align-items:center;min-height:100vh;color:#333}
+.header{background:#fff;padding:15px 25px;border-radius:25px;box-shadow:0 8px 16px rgba(0,0,0,.1);display:flex;justify-content:space-between;align-items:center;width:100%;max-width:500px;margin-bottom:20px;box-sizing:border-box}
+.stars{font-size:24px;font-weight:700;color:#ff9f1c}
+.card{background:#fff;padding:25px;border-radius:30px;box-shadow:0 10px 25px rgba(0,0,0,.15);width:100%;max-width:500px;text-align:center;box-sizing:border-box}
+h1{color:#ff4d6d;margin-top:0;font-size:26px}
+.subtitle{color:#6c757d;font-size:15px;margin-bottom:20px}
+.btn{background:#4cc9f0;color:#fff;border:none;padding:15px 20px;font-size:19px;font-weight:700;border-radius:20px;cursor:pointer;margin:8px 0;width:100%;box-shadow:0 5px 0 #3a86ff;transition:transform .1s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #3a86ff}
+.btn-green{background:#06d6a0;box-shadow:0 5px 0 #049a73}
+.btn-purple{background:#9b5de5;box-shadow:0 5px 0 #6a359c}
+.btn-orange{background:#ff9f1c;box-shadow:0 5px 0 #d97706}
+.emoji{font-size:75px;margin:10px 0;line-height:1.1}
+.number-badge{font-size:65px;font-weight:700;color:#ff9f1c;background:#fff3cd;border-radius:25px;padding:10px 30px;display:inline-block;margin:10px 0}
+.word-ro{font-size:32px;font-weight:700;color:#2b2d42;margin:10px 0}
+.word-de{font-size:20px;color:#6c757d;margin-bottom:20px}
+.progress{font-size:14px;color:#8d99ae;margin-bottom:10px}
+.quiz-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.quiz-option{background:#f8f9fa;border:3px solid #dee2e6;border-radius:20px;padding:15px 10px;font-size:34px;font-weight:700;cursor:pointer;min-height:85px;display:flex;align-items:center;justify-content:center}
+.quiz-option:hover{border-color:#4cc9f0;background:#e0fbfc}
+.feedback{font-size:22px;font-weight:700;margin-top:15px;min-height:30px}
+.hidden{display:none}
+</style>
 </head>
 <body>
-
-    <div class="header">
-        <div><strong>Hallo Marie! 👋</strong></div>
-        <div class="stars">⭐ <span id="star-count">0</span></div>
-    </div>
-
-    <!-- Startbildschirm -->
-    <div id="menu-screen" class="card">
-        <h1>Rumänisch lernen 🇷🇴</h1>
-        <p>Wähle ein Thema aus:</p>
-        <button class="btn" onclick="startCategory('tiere')">🐶 Tiere (Animale)</button>
-        <button class="btn btn-green" onclick="startCategory('farben')">🎨 Farben (Culori)</button>
-        <button class="btn btn-purple" onclick="startCategory('hallo')">👋 Begrüßung (Salut)</button>
-    </div>
-
-    <!-- Lern- & Quiz-Bildschirm -->
-    <div id="game-screen" class="card hidden">
-        <button onclick="showMenu()" style="float:left; border:none; background:none; font-size:18px; cursor:pointer;">⬅️ Zurück</button>
-        <div style="clear:both;"></div>
-
-        <!-- Lernmodus -->
-        <div id="learn-box">
-            <div class="emoji" id="learn-emoji">🐶</div>
-            <div class="word-ro" id="learn-ro">Câine</div>
-            <div class="word-de" id="learn-de">Der Hund</div>
-            <button class="btn" onclick="speakCurrent()">🔊 Anhören</button>
-            <button class="btn btn-green" onclick="nextWord()">Weiter ➡️</button>
-        </div>
-
-        <!-- Quizmodus -->
-        <div id="quiz-box" class="hidden">
-            <h2>Was heißt:</h2>
-            <div class="word-ro" id="quiz-word">Câine</div>
-            <button class="btn" onclick="speakQuiz()" style="padding:10px; font-size:16px; width:auto;">🔊 Nochmal hören</button>
-            <div class="quiz-grid" id="quiz-options"></div>
-            <div class="feedback" id="quiz-feedback"></div>
-        </div>
-    </div>
-
-    <script>
-        const data = {
-            tiere: [
-                { ro: "Câine", de: "Der Hund", emoji: "🐶" },
-                { ro: "Pisică", de: "Die Katze", emoji: "🐱" },
-                { ro: "Cal", de: "Das Pferd", emoji: "🐴" },
-                { ro: "Iepure", de: "Der Hase", emoji: "🐰" }
-            ],
-            farben: [
-                { ro: "Roșu", de: "Rot", emoji: "🔴" },
-                { ro: "Albastru", de: "Blau", emoji: "🔵" },
-                { ro: "Galben", de: "Gelb", emoji: "🟡" },
-                { ro: "Verde", de: "Grün", emoji: "🟢" }
-            ],
-            hallo: [
-                { ro: "Bună!", de: "Hallo!", emoji: "👋" },
-                { ro: "Mulțumesc", de: "Danke", emoji: "🙏" },
-                { ro: "Te rog", de: "Bitte", emoji: "😊" },
-                { ro: "Pa-pa!", de: "Tschüss!", emoji: "✌️" }
-            ]
-        };
-
-        let currentList = [];
-        let currentIndex = 0;
-        let stars = 0;
-        let quizTarget = null;
-
-        function speak(text) {
-            window.speechSynthesis.cancel();
-            const msg = new SpeechSynthesisUtterance(text);
-            msg.lang = 'ro-RO';
-            msg.rate = 0.85;
-            window.speechSynthesis.speak(msg);
-        }
-
-        function startCategory(cat) {
-            currentList = data[cat];
-            currentIndex = 0;
-            document.getElementById('menu-screen').classList.add('hidden');
-            document.getElementById('game-screen').classList.remove('hidden');
-            showLearnWord();
-        }
-
-        function showLearnWord() {
-            document.getElementById('learn-box').classList.remove('hidden');
-            document.getElementById('quiz-box').classList.add('hidden');
-            const item = currentList[currentIndex];
-            document.getElementById('learn-emoji').innerText = item.emoji;
-            document.getElementById('learn-ro').innerText = item.ro;
-            document.getElementById('learn-de').innerText = item.de;
-            speak(item.ro);
-        }
-
-        function speakCurrent() {
-            speak(currentList[currentIndex].ro);
-        }
-
-        function nextWord() {
-            currentIndex++;
-            if (currentIndex < currentList.length) {
-                showLearnWord();
-            } else {
-                startQuiz();
-            }
-        }
-
-        function startQuiz() {
-            document.getElementById('learn-box').classList.add('hidden');
-            document.getElementById('quiz-box').classList.remove('hidden');
-            document.getElementById('quiz-feedback').innerText = "";
-            
-            quizTarget = currentList[Math.floor(Math.random() * currentList.length)];
-            document.getElementById('quiz-word').innerText = quizTarget.ro;
-            speak(quizTarget.ro);
-
-            const grid = document.getElementById('quiz-options');
-            grid.innerHTML = "";
-            const shuffled = [...currentList].sort(() => Math.random() - 0.5);
-
-            shuffled.forEach(item => {
-                const btn = document.createElement('button');
-                btn.className = 'quiz-option';
-                btn.innerText = item.emoji;
-                btn.onclick = () => checkAnswer(item);
-                grid.appendChild(btn);
-            });
-        }
-
-        function speakQuiz() {
-            if (quizTarget) speak(quizTarget.ro);
-        }
-
-        function checkAnswer(selected) {
-            const fb = document.getElementById('quiz-feedback');
-            if (selected.ro === quizTarget.ro) {
-                fb.style.color = "#06d6a0";
-                fb.innerText = "Super Marie! +1 ⭐";
-                stars++;
-                document.getElementById('star-count').innerText = stars;
-                setTimeout(startQuiz, 1200);
-            } else {
-                fb.style.color = "#ff4d6d";
-                fb.innerText = "Fast! Versuch es nochmal 💪";
-                speak(quizTarget.ro);
-            }
-        }
-
-        function showMenu() {
-            document.getElementById('game-screen').classList.add('hidden');
-            document.getElementById('menu-screen').classList.remove('hidden');
-        }
-    </script>
+<div class="header"><div><strong>Hallo Marie! 👋</strong></div><div class="stars">⭐ <span id="star-count">0</span></div></div>
+<div id="menu-screen" class="card">
+<h1>Rumänisch lernen 🇷🇴</h1>
+<p class="subtitle">200 Wörter & Zahlen – Wähle ein Thema:</p>
+<button class="btn" onclick="startCategory('tiere')">🐶 Tiere (50 Wörter)</button>
+<button class="btn btn-green" onclick="startCategory('farben')">🎨 Farben & Formen (25 Wörter)</button>
+<button class="btn btn-purple" onclick="startCategory('hallo')">👋 Begrüßung & Sätze (25 Wörter)</button>
+<button class="btn btn-orange" onclick="startCategory('zahlen')">🔢 Zahlen 1 bis 100</button>
+</div>
+<div id="game-screen" class="card hidden">
+<button onclick="showMenu()" style="float:left;border:none;background:none;font-size:18px;cursor:pointer;color:#555">⬅️ Menü</button>
+<div class="progress" id="progress-text" style="float:right;margin-top:4px">1 / 6</div>
+<div style="clear:both"></div>
+<div id="learn-box">
+<div id="learn-visual"></div>
+<div class="word-ro" id="learn-ro"></div>
+<div class="word-de" id="learn-de"></div>
+<button class="btn" onclick="speakCurrent()">🔊 Anhören</button>
+<button class="btn btn-green" onclick="nextWord()">Weiter ➡️</button>
+</div>
+<div id="quiz-box" class="hidden">
+<h2 style="margin-bottom:5px">Was heißt:</h2>
+<div class="word-ro" id="quiz-word"></div>
+<button class="btn" onclick="speakQuiz()" style="padding:8px 18px;font-size:16px;width:auto">🔊 Nochmal hören</button>
+<div class="quiz-grid" id="quiz-options"></div>
+<div class="feedback" id="quiz-feedback"></div>
+</div>
+</div>
+<script>
+const p=s=>s.split('|').map(x=>{const[ro,de,visual]=x.split(';');return{ro,de,visual}});
+const tiereList=p("Câine;Der Hund;🐶|Pisică;Die Katze;🐱|Cal;Das Pferd;🐴|Iepure;Der Hase;🐰|Vacă;Die Kuh;🐮|Porc;Das Schwein;🐷|Oaie;Das Schaf;🐑|Capră;Die Ziege;🐐|Găină;Das Huhn;🐔|Cocoș;Der Hahn;🐓|Rață;Die Ente;🦆|Gâscă;Die Gans;🪿|Șoarece;Die Maus;🐭|Hamster;Der Hamster;🐹|Urs;Der Bär;🐻|Lup;Der Wolf;🐺|Vulpe;Der Fuchs;🦊|Cerb;Der Hirsch;🦌|Arici;Der Igel;🦔|Veveriță;Das Eichhörnchen;🐿️|Bufniță;Die Eule;🦉|Vultur;Der Adler;🦅|Porumbel;Die Taube;🕊️|Pinguin;Der Pinguin;🐧|Flamingo;Der Flamingo;🦩|Papagal;Der Papagei;🦜|Lebădă;Der Schwan;🦢|Leu;Der Löwe;🦁|Tigru;Der Tiger;🐯|Elefant;Der Elefant;🐘|Girafă;Die Giraffe;🦒|Zebră;Das Zebra;🦓|Maimuță;Der Affe;🐵|Crocodil;Das Krokodil;🐊|Șarpe;Die Schlange;🐍|Broască;Der Frosch;🐸|Broască țestoasă;Die Schildkröte;🐢|Pește;Der Fisch;🐟|Rechin;Der Hai;🦈|Delfin;Der Delfin;🐬|Balenă;Der Wal;🐋|Caracatiță;Der Oktopus;🐙|Crab;Die Krabbe;🦀|Fluture;Der Schmetterling;🦋|Albină;Die Biene;🐝|Buburuză;Der Marienkäfer;🐞|Furnică;Die Ameise;🐜|Păianjen;Die Spinne;🕷️|Melc;Die Schnecke;🐌|Unicorn;Das Einhorn;🦄");
+const farbenList=p("Roșu;Rot;🔴|Albastru;Blau;🔵|Galben;Gelb;🟡|Verde;Grün;🟢|Portocaliu;Orange;🟠|Mov;Lila;🟣|Roz;Rosa;🩷|Maro;Braun;🟤|Negru;Schwarz;⚫|Alb;Weiß;⚪|Gri;Grau;🩶|Auriu;Gold;🥇|Argintiu;Silber;🥈|Turcoaz;Türkis;🩵|Bej;Beige;🏜️|Albastru deschis;Hellblau;🧊|Albastru închis;Dunkelblau;🌌|Verde deschis;Hellgrün;🌱|Verde închis;Dunkelgrün;🌲|Curcubeu;Der Regenbogen;🌈|Cerc;Der Kreis;⭕|Pătrat;Das Quadrat;🟥|Triunghi;Das Dreieck;🔺|Stea;Der Stern;⭐|Inimă;Das Herz;❤️");
+const halloList=p("Bună!;Hallo!;👋|Salut!;Hi! / Hallo!;🙋‍♀️|Bună dimineața!;Guten Morgen!;🌅|Bună ziua!;Guten Tag!;☀️|Bună seara!;Guten Abend!;🌆|Noapte bună!;Gute Nacht!;🌙|Pa-pa!;Tschüss!;✌️|La revedere!;Auf Wiedersehen!;🚶‍♀️|Pe curând!;Bis bald!;🤗|Mulțumesc!;Danke!;🙏|Mulțumesc mult!;Vielen Dank!;💐|Cu plăcere!;Gern geschehen!;😊|Te rog!;Bitte!;🥺|Scuze!;Entschuldigung!;🙈|Da;Ja;✅|Nu;Nein;❌|Ce faci?;Wie geht es dir?;💬|Bine, mulțumesc!;Gut, danke!;👍|Mă numesc Marie.;Ich heiße Marie.;👧|Cum te cheamă?;Wie heißt du?;❓|Îmi pare bine!;Freut mich!;🤝|Te iubesc!;Ich hab dich lieb!;💖|Spor la joacă!;Viel Spaß beim Spielen!;🎲|Bravo!;Super gemacht!;🎉|Nu înțeleg.;Ich verstehe nicht.;🤷‍♀️");
+function genNum(){const o=["","unu","doi","trei","patru","cinci","șase","șapte","opt","nouă"],t=["zece","unsprezece","doisprezece","treisprezece","paisprezece","cincisprezece","șaisprezece","șaptesprezece","optsprezece","nouăsprezece"],z=["","","douăzeci","treizeci","patruzeci","cincizeci","șaizeci","șaptezeci","optzeci","nouăzeci"],l=[];for(let i=1;i<=100;i++){let w=i<10?o[i]:i<20?t[i-10]:i<100?(i%10===0?z[Math.floor(i/10)]:z[Math.floor(i/10)]+" și "+o[i%10]):"o sută";w=w.charAt(0).toUpperCase()+w.slice(1);l.push({ro:w,de:"Die Zahl "+i,visual:String(i),isNumber:true})}return l}
+const data={tiere:tiereList,farben:farbenList,hallo:halloList,zahlen:genNum()};
+let round=[],idx=0,stars=parseInt(localStorage.getItem('marie_stars')||'0'),target=null,qCnt=0;
+document.getElementById('star-count').innerText=stars;
+function speak(t){window.speechSynthesis.cancel();const m=new SpeechSynthesisUtterance(t);m.lang='ro-RO';m.rate=0.85;window.speechSynthesis.speak(m)}
+function startCategory(c){round=[...data[c]].sort(()=>Math.random()-.5).slice(0,6);idx=0;qCnt=0;document.getElementById('menu-screen').classList.add('hidden');document.getElementById('game-screen').classList.remove('hidden');showLearn()}
+function showLearn(){document.getElementById('learn-box').classList.remove('hidden');document.getElementById('quiz-box').classList.add('hidden');document.getElementById('progress-text').innerText="Lernen: "+(idx+1)+" / "+round.length;const it=round[idx];document.getElementById('learn-visual').innerHTML=it.isNumber?'<div class="number-badge">'+it.visual+'</div>':'<div class="emoji">'+it.visual+'</div>';document.getElementById('learn-ro').innerText=it.ro;document.getElementById('learn-de').innerText=it.de;speak(it.ro)}
+function speakCurrent(){speak(round[idx].ro)}
+function nextWord(){idx++;idx<round.length?showLearn():startQuiz()}
+function startQuiz(){if(qCnt>=6){alert("Super gemacht Marie! Du hast diese Runde geschafft!");showMenu();return}document.getElementById('learn-box').classList.add('hidden');document.getElementById('quiz-box').classList.remove('hidden');document.getElementById('progress-text').innerText="Quiz: "+(qCnt+1)+" / 6";document.getElementById('quiz-feedback').innerText="";target=round[qCnt];document.getElementById('quiz-word').innerText=target.ro;speak(target.ro);const g=document.getElementById('quiz-options');g.innerHTML="";let oth=round.filter(x=>x.ro!==target.ro).sort(()=>Math.random()-.5).slice(0,3);[target,...oth].sort(()=>Math.random()-.5).forEach(it=>{const b=document.createElement('button');b.className='quiz-option';b.innerHTML=it.visual;b.onclick=()=>check(it);g.appendChild(b)})}
+function speakQuiz(){if(target)speak(target.ro)}
+function check(s){const f=document.getElementById('quiz-feedback');if(s.ro===target.ro){f.style.color="#06d6a0";f.innerHTML="Super Marie! +1 ⭐";stars++;localStorage.setItem('marie_stars',stars);document.getElementById('star-count').innerText=stars;qCnt++;setTimeout(startQuiz,1100)}else{f.style.color="#ff4d6d";f.innerHTML="Fast! Versuch es nochmal 💪";speak(target.ro)}}
+function showMenu(){document.getElementById('game-screen').classList.add('hidden');document.getElementById('menu-screen').classList.remove('hidden')}
+</script>
 </body>
 </html>
