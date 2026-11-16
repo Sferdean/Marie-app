@@ -18,7 +18,7 @@ export const vocabulary = [
   { category: "begruessung", de: "Guten Morgen!", en: "Good morning!", ro: "Bună dimineața!", icon: "☀️" },
   { category: "begruessung", de: "Danke schön!", en: "Thank you!", ro: "Mulțumesc!", icon: "🙏" },
   { category: "begruessung", de: "Wie geht es dir?", en: "How are you?", ro: "Ce mai faci?", icon: "😊" },
-  { category: "begruessung", de: "Auf Wiedersehen!", en: "Goodbye!", ro: "La revedere!", icon: "🌈" }.
+  { category: "begruessung", de: "Auf Wiedersehen!", en: "Goodbye!", ro: "La revedere!", icon: "🌈" },
 
   // Modul 4: Zahlen 1 bis 10
   { category: "zahlen", num: 1, de: "Eins (1)", en: "One", ro: "Unu", icon: "1️⃣" },
