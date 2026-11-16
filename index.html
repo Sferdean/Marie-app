@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maries Sprach-Abenteuer 🇩🇪 🇬🇧 🇷🇴</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- Header mit Begrüßung und Sternenzähler -->
+  <header class="app-header">
+    <button id="home-btn" class="nav-btn hidden">🏠 Start</button>
+    <h1>Hallo Marie! 👋</h1>
+    <div class="star-counter" title="Gesammelte Sterne">
+      ⭐ <span id="star-count">0</span>
+    </div>
+  </header>
+
+  <!-- Info-Banner für den einmaligen KI-Modell-Download -->
+  <div id="tts-status" class="tts-banner hidden">
+    🤖 Lade rumänische KI-Stimme (einmalig ca. 18 MB)...
+  </div>
+
+  <!-- Startbildschirm: Modulauswahl -->
+  <main id="home-screen" class="screen">
+    <p class="subtitle">Wähle ein Thema aus und sammle Sterne!</p>
+    <div class="module-grid">
+      <div class="module-card card-animals" data-category="tiere">
+        <div class="module-icon">🦔</div>
+        <h2>Tierwelt-Safari</h2>
+        <p>Tiere auf Englisch & Rumänisch</p>
+      </div>
+
+      <div class="module-card card-colors" data-category="farben">
+        <div class="module-icon">🎨</div>
+        <h2>Farben-Zauber</h2>
+        <p>Bunte Wörter entdecken</p>
+      </div>
+
+      <div class="module-card card-greetings" data-category="begruessung">
+        <div class="module-icon">💬</div>
+        <h2>Hallo Welt!</h2>
+        <p>Begrüßung & Alltag</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lernbereich: Entdecker-Modus & Quiz -->
+  <main id="learning-screen" class="screen hidden">
+    <div class="mode-switch">
+      <button id="btn-explore" class="mode-btn active">🔍 Entdecken</button>
+      <button id="btn-quiz" class="mode-btn">🎯 Quiz (Sterne sammeln)</button>
+    </div>
+
+    <!-- Entdecker-Modus -->
+    <div id="explore-view" class="card-container">
+      <div class="flashcard">
+        <div id="card-visual" class="visual-box">🦔</div>
+        <div class="word-de">🇩🇪 <span id="word-de">Der Igel</span></div>
+        
+        <div class="translations">
+          <div class="trans-row en-row">
+            <span>🇬🇧 <strong id="word-en">The hedgehog</strong></span>
+            <button id="btn-speak-en" class="audio-btn" aria-label="Englisch anhören">🔊</button>
+          </div>
+          <div class="trans-row ro-row">
+            <span>🇷🇴 <strong id="word-ro">Ariciul</strong></span>
+            <button id="btn-speak-ro" class="audio-btn" aria-label="Rumänisch anhören">🔊</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-controls">
+        <button id="btn-prev" class="control-btn">⬅️ Zurück</button>
+        <span id="card-progress">1 / 5</span>
+        <button id="btn-next" class="control-btn">Weiter ➡️</button>
+      </div>
+    </div>
+
+    <!-- Quiz-Modus -->
+    <div id="quiz-view" class="card-container hidden">
+      <div class="quiz-box">
+        <p class="quiz-prompt">Wie heißt das auf <span id="quiz-target-lang" class="highlight-lang">Englisch 🇬🇧</span>?</p>
+        <div id="quiz-visual" class="visual-box small">🦔</div>
+        <h2 id="quiz-word-de" class="quiz-de">Der Igel</h2>
+        
+        <div id="quiz-options" class="options-grid">
+          <!-- Antwort-Buttons werden per JS eingefügt -->
+        </div>
+        <p id="quiz-feedback" class="feedback-msg"></p>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
