@@ -335,6 +335,9 @@ body {
   max-width: 500px;
   margin: 0 auto 20px;
 }
+#number-tester {
+  display: none !important;
+}
 
 .number-tester input {
   flex: 1;
