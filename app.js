@@ -563,7 +563,7 @@ async function speakRomanianPiper(text) {
     }
   }
 }
-/ --- EXAKTER ZAHLEN-ÜBERSETZER (0 bis 10.000 für DE, EN, RO) ---
+// --- EXAKTER ZAHLEN-ÜBERSETZER (0 bis 10.000 für DE, EN, RO) ---
 function numberToGerman(n) {
   if (n === 0) return "Null";
   if (n === 10000) return "Zehntausend";
