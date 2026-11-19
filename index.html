@@ -42,13 +42,12 @@
         <div class="module-icon">💬</div>
         <h2>Hallo Welt!</h2>
       </div>
-
+      
       <div class="module-card card-numbers" data-category="zahlen">
         <div class="module-icon">🔢</div>
         <h2>Zahlen-Rechenspaß</h2>
-        <p>1–10 lernen, Plus & Minus</p>
+        <p>Bis 10.000: Plus, Minus & Mal</p>
       </div>
-      
     </div>
   </main>
 
@@ -84,6 +83,15 @@
       </div>
     </div>
 
+    <!-- Entdecker-Modus -->
+    <div id="explore-view" class="card-container">
+      <div id="number-tester" class="number-tester hidden">
+        <input type="number" id="custom-number-input" min="0" max="10000" placeholder="Zahl (0–10000) eingeben...">
+        <button id="btn-test-number" class="control-btn">Anzeigen</button>
+      </div>
+
+      <div class="flashcard">
+
     <!-- Quiz-Modus -->
     <div id="quiz-view" class="card-container hidden">
       <div class="quiz-box">
@@ -99,6 +107,6 @@
     </div>
   </main>
 
-  <script type="module" src="app.js?v=4"></script>
+  <script type="module" src="app.js?v=6"></script>
 </body>
 </html>
