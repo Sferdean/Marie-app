@@ -1,5 +1,5 @@
 import * as tts from 'https://cdn.jsdelivr.net/npm/@mintplex-labs/piper-tts-web@1.0.2/+esm';
-import { vocabulary } from './data.js?v=9;
+import { vocabulary } from './data.js?v=9';
 
 let currentCategory = "";
 let currentList = [];
